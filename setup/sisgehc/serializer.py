@@ -16,5 +16,5 @@ class EventoSerializer(serializers.ModelSerializer):
         model = Evento
         fields = ['nome', 'horasComplementares', 'curso', 
                   'professor', 'dataInicio', 'dataFim', 
-                  'horarioInicio', 'horarioFim', 'limiteInscricao', 
+                  'horaInicio', 'horaFim', 'limiteInscricao', 
                   'descricao', 'imagem']

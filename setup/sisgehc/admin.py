@@ -17,7 +17,7 @@ class Cursos (admin.ModelAdmin):
 admin.site.register(Curso, Cursos)
 
 class Professores(admin.ModelAdmin):
-    list_display = ('id','nome', 'matricula', 'curso')
+    list_display = ('id','nome', 'matricula', 'curso', 'senha')
     list_display_links = ('id', 'nome')
     search_fields = ('nome',)
     list_per_page = 20

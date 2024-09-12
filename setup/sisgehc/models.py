@@ -33,10 +33,10 @@ class Evento (models.Model):
     professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
     dataInicio = models.DateField()
     dataFim = models.DateField()
-    horaInicio = models.CharField(max_length=30)
-    horaFim = models.CharField(max_length=30)
+    horaInicio = models.TimeField() 
+    horaFim = models.TimeField()      
     limiteInscricao = models.IntegerField()
-    descricao = models.CharField(max_length=30)
+    descricao = models.CharField(max_length=200)
     imagem = models.ImageField(upload_to='fotos/', null=True, blank=True)
     def __str__(self):
         return self.nome
