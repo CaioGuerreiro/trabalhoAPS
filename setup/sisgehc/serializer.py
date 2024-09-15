@@ -23,4 +23,4 @@ class EventoSerializer(serializers.ModelSerializer):
 class ProfessorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Professor
-        fields = '__all__'
+        fields = ['nome', 'matricula', 'senha', 'curso']
