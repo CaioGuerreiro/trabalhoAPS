@@ -1,7 +1,7 @@
 from rest_framework import viewsets, generics
 from django.shortcuts import render
-from sisgehc.models import Aluno, Curso, Evento
-from sisgehc.serializer import AlunoSerializer, CursoSerializer, EventoSerializer
+from sisgehc.models import Aluno, Curso, Evento, Professor
+from sisgehc.serializer import AlunoSerializer, CursoSerializer, EventoSerializer, ProfessorSerializer
 
 
 class AlunosViewSet(viewsets.ModelViewSet):
@@ -19,4 +19,9 @@ class EventoViewSet(viewsets.ModelViewSet):
     queryset = Evento.objects.all()
     serializer_class = EventoSerializer
 
+
+class ProfessorViewSet(viewsets.ModelViewSet):
+    """Exibindo todos os professores"""
+    queryset = Professor.objects.all()
+    serializer_class = ProfessorSerializer
 
