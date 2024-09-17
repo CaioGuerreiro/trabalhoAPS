@@ -22,19 +22,25 @@ class Professor(models.Model):
     matricula = models.IntegerField()
     senha = models.CharField(max_length=30)
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.nome
 
 
 class Evento (models.Model):
-    nome = models.CharField(max_length=30)
+    nome = models.CharField(max_length=50)
     horasComplementares = models.IntegerField()
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
     professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
+    responsavel = models.CharField(max_length=50, null=True, blank=True)
     dataInicio = models.DateField()
     dataFim = models.DateField()
-    horaInicio = models.CharField(max_length=30)
-    horaFim = models.CharField(max_length=30)
-    limiteInscricao = models.IntegerField()
-    descricao = models.CharField(max_length=30)
+    horaInicio = models.TimeField() 
+    horaFim = models.TimeField()      
+    descricao = models.CharField(max_length=200)
+    imagem = models.ImageField(upload_to='fotos/', null=True, blank=True)
+    def __str__(self):
+        return self.nome
+
 
 class Inscricao (models.Model):
     evento = models.ForeignKey(Evento, on_delete=models.CASCADE)
