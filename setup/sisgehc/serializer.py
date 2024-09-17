@@ -14,10 +14,7 @@ class CursoSerializer(serializers.ModelSerializer):
 class EventoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Evento
-        fields = ['nome', 'horasComplementares', 'curso', 
-                  'professor', 'dataInicio', 'dataFim', 
-                  'horaInicio', 'horaFim', 'limiteInscricao', 
-                  'descricao', 'imagem']
+        fields = '__all__'
         
 
 class ProfessorSerializer(serializers.ModelSerializer):

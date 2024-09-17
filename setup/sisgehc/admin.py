@@ -24,7 +24,7 @@ class Professores(admin.ModelAdmin):
 admin.site.register(Professor, Professores)
 
 class Eventos (admin.ModelAdmin):
-    list_display = ('id','nome', 'professor', 'curso', 'horasComplementares', 'dataInicio', 'dataFim', 'horaInicio', 'horaFim', 'limiteInscricao', 'descricao', 'imagem')
+    list_display = ('id','nome', 'professor', 'curso', 'responsavel', 'horasComplementares', 'dataInicio', 'dataFim', 'horaInicio', 'horaFim', 'descricao', 'imagem')
     list_display_links = ('id', 'nome')
     search_fields = ('nome',)
     list_per_page = 20
