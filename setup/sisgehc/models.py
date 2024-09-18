@@ -32,6 +32,7 @@ class Evento (models.Model):
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
     professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
     responsavel = models.CharField(max_length=50, null=True, blank=True)
+    local = models.CharField(max_length=50, default="Uece")
     dataInicio = models.DateField()
     dataFim = models.DateField()
     horaInicio = models.TimeField() 
