@@ -30,7 +30,7 @@ class Evento (models.Model):
     nome = models.CharField(max_length=50)
     horasComplementares = models.IntegerField()
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
-    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
+    professor = models.CharField(max_length=50 , blank=True, null=True)
     responsavel = models.CharField(max_length=50, null=True, blank=True)
     dataInicio = models.DateField()
     dataFim = models.DateField()
