@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from sisgehc.views import AlunosViewSet, CursosViewSet, EventoViewSet,ProfessorViewSet
+from sisgehc.views import AlunosViewSet, CursosViewSet, EventoViewSet,ProfessorViewSet, InscricaoViewSet
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +26,7 @@ router.register('alunos',AlunosViewSet, basename='Alunos')
 router.register('cursos', CursosViewSet, basename='Cursos')
 router.register('eventos', EventoViewSet, basename='eventos')
 router.register('professor', ProfessorViewSet, basename="Professores")
+router.register('inscricao',InscricaoViewSet, basename='inscricoes')
 
 
 urlpatterns = [

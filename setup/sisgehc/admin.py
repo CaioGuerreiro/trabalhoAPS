@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from sisgehc.models import Aluno, Curso, Professor, Evento
+from sisgehc.models import Aluno, Curso, Professor, Evento, Inscricao
 
 class Alunos(admin.ModelAdmin):
     list_display = ('id','nome', 'matricula', 'horasComplementares', 'curso')
@@ -29,3 +29,10 @@ class Eventos (admin.ModelAdmin):
     search_fields = ('nome',)
     list_per_page = 20
 admin.site.register(Evento, Eventos)
+
+class Inscricoes (admin.ModelAdmin):
+    list_display = ('id','evento', 'Aluno')
+    list_display_links = ('id',)
+    search_fields = ('evento',)
+    list_per_page = 20
+admin.site.register(Inscricao, Inscricoes)
